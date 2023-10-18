@@ -3,6 +3,8 @@ const { Client } = pg;
 
 import connectionString from './creds.js'
 
-export const db = new Client({
+export const client = new Client({
   connectionString
 })
+
+await client.connect()

@@ -1,9 +1,9 @@
-import { db } from "./dbConnect.js"
+import { client } from "./dbConnect.js"
 
 export async function getAllCustomers(req, res) {
-  await db.connect()
-  const result = await db.query('SELECT * FROM customers')
-  db.end()
+
+  const result = await client.query('SELECT * FROM customers')
+
   res.send(result.rows)
 }
 
